@@ -39,11 +39,3 @@ plt.xlabel("Predicted")
 plt.ylabel("True")
 plt.title("SVM Confusion Matrix (Linear Kernel)")
 plt.show()
-
-
-'''
-git add .
-git commit -m "siu3"
-git push origin main
-
-'''
