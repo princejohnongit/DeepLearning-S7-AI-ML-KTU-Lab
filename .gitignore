@@ -1,7 +1,6 @@
 git clone https://github.com/dbmslab2024/DeepLearning-S7-AI-ML-KTU-Lab
-'''
+--------------------------------------------------------
 git add .
-git commit -m "siu3"
+git commit -m "Used from personal PC also"
 git push origin main
-
-'''
+-----------------------------------------------
