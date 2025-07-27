@@ -2,6 +2,6 @@
 git clone https://github.com/dbmslab2024/DeepLearning-S7-AI-ML-KTU-Lab
 --------------------------------------------------------
 git add .
-git commit -m "Added PDF"
+git commit -m "env 3"
 git push origin main
 -----------------------------------------------
