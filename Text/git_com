@@ -1,5 +1,5 @@
 git clone https://github.com/dbmslab2024/DeepLearning-S7-AI-ML-KTU-Lab.git
 --------------------------------------------------------------------------
 git add .
-git commit -m "Changed Arrangment"
+git commit -m "Changed Names"
 git push origin main
