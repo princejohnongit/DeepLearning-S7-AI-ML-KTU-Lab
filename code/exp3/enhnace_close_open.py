@@ -74,16 +74,25 @@ def show_image(img_tensor, title='Image'):
 
 if __name__ == "__main__":
     # Example usage
-    img_path = 'DeepLearning-S7-AI-ML-KTU-Lab/code/exp3/input.jpg'
+    img_path = '/home/cs-ai-21/Prince/DeepLearning-S7-AI-ML-KTU-Lab/code/exp3/input.jpg'
     img_tensor = load_image(img_path, grayscale=True)
 
     # Histogram Equalization
     img_he = histogram_equalization(img_tensor)
-    show_image(img_tensor, 'Original')
-    show_image(img_he, 'Histogram Equalized')
-
-    # Morphological Operations
     img_open = morphological_operation(img_tensor, operation='open', kernel_size=5)
     img_close = morphological_operation(img_tensor, operation='close', kernel_size=5)
-    show_image(img_open, 'Opened')
-    show_image(img_close, 'Closed')
+
+    # Display all four images together
+    images = [img_tensor, img_he, img_open, img_close]
+    titles = ['Original', 'Histogram Equalized', 'Opened', 'Closed']
+    plt.figure(figsize=(12, 6))
+    for i, (img, title) in enumerate(zip(images, titles)):
+        plt.subplot(1, 4, i+1)
+        arr = img.squeeze().cpu().numpy()
+        if arr.ndim == 3 and arr.shape[0] == 3:
+            arr = np.transpose(arr, (1, 2, 0))
+        plt.imshow(arr, cmap='gray' if arr.ndim == 2 else None)
+        plt.title(title)
+        plt.axis('off')
+    plt.tight_layout()
+    plt.show()
