@@ -1,0 +1,14 @@
+12-line step-by-step algorithm for your image processing program, suitable for a lab manual:
+
+1.  **Import Libraries:** Import `torch`, `numpy`, `PIL.Image`, `torchvision.transforms.functional`, and `matplotlib.pyplot`.
+2.  **Define `load_image`:** Implement a function to load an image from a path, convert it to grayscale or RGB, and transform it into a PyTorch tensor.
+3.  **Define `show_image`:** Implement a helper function to display a PyTorch image tensor using Matplotlib.
+4.  **Define `_equalize_channel`:** Create a helper to perform histogram equalization on a single channel (compute histogram, CDF, normalize, interpolate).
+5.  **Define `histogram_equalization`:** Implement a function that applies `_equalize_channel` to grayscale images or each channel of an RGB image.
+6.  **Define `_dilate`:** Create a helper for morphological dilation, applying a max filter with a kernel.
+7.  **Define `_erode`:** Create a helper for morphological erosion, applying a min filter with a kernel.
+8.  **Define `morphological_operation`:** Implement a function to select and apply either dilation or erosion based on input.
+9.  **Load Input Image:** Load a sample image (e.g., 'input.jpg') as a grayscale PyTorch tensor.
+10. **Perform Histogram Equalization:** Apply the `histogram_equalization` function to the loaded image and display both original and equalized images.
+11. **Perform Dilation:** Apply the `morphological_operation` with 'dilate' to the original image and display the result.
+12. **Perform Erosion:** Apply the `morphological_operation` with 'erode' to the original image and display the result.
