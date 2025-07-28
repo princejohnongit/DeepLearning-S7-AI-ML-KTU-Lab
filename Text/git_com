@@ -1,5 +1,12 @@
 git clone https://github.com/dbmslab2024/DeepLearning-S7-AI-ML-KTU-Lab.git
 --------------------------------------------------------------------------
 git add .
-git commit -m "Changed Names"
+git commit -m "Changed erode"
 git push origin main
+
+
+
+---------------------------------------------------------------------------------------------
+git remote add origin https://github.com/dbmslab2024/DeepLearning-S7-AI-ML-KTU-Lab.git
+
+git remote set-url origin https://github.com/dbmslab2024/DeepLearning-S7-AI-ML-KTU-Lab.git
