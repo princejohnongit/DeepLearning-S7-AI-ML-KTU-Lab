@@ -2,7 +2,7 @@
 
 # 🧠 Deep Learning Lab (DLL) - S7 AI & ML (KTU)
 
-**Course Code:** CSL703  
+**Course Code:** AIL 411
 **Program:** B.Tech in Artificial Intelligence & Machine Learning  
 **University:** APJ Abdul Kalam Technological University (KTU)
 
@@ -33,5 +33,7 @@ This lab course provides hands-on experience with fundamental and advanced conce
 10. **Project: End-to-End Deep Learning Application**
 
 ---
+
+[📄 **Download Full Syllabus (PDF)**](Text/DLL-Syllabus.pdf)
 
 > _For detailed experiment instructions, refer to your lab manual or course instructor._
