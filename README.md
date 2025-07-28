@@ -3,6 +3,7 @@
 # 🧠 Deep Learning Lab (DLL) - S7 AI & ML (KTU)
 
 **Course Code:** AIL 411
+---
 **Program:** B.Tech in Artificial Intelligence & Machine Learning  
 **University:** APJ Abdul Kalam Technological University (KTU)
 
