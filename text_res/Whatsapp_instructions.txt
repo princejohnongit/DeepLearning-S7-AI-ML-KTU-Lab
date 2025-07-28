@@ -1,0 +1,16 @@
+[3/07/2025 4:10 PM] Abhinav AI MACE: Please find the programs to be completed tomorrow. Each student is required to bring a rough record with the algorithm written in it.
+[3/07/2025 4:10 PM] Abhinav AI MACE: 1.Write a program to demonstrate the working of the decision tree based ID3 algorithm.
+Use play tennis data set for building the decision tree and apply this knowledge to
+classify a new sample.
+[3/07/2025 4:10 PM] Abhinav AI MACE: 2. To implement and evaluate a linear Support Vector Machine (SVM) classifier for the Iris dataset.
+[3/07/2025 4:10 PM] Abhinav AI MACE: 3. To implement and visualize the Gradient Descent algorithm to find the optimal parameters (slope and intercept) for a simple linear regression model using an apporpriate data set.
+[3/07/2025 4:10 PM] Abhinav AI MACE: Kindly convey this message to the entire class and ensure students follow the instructions according to their respective lab slots.
+[3/07/2025 4:10 PM] Abhinav AI MACE: Tomorrow DL LAB for Batch 1
+------------------------------------
+[3/07/2025 4:10 PM] Abhinav AI MACE: 🛑🛑🛑
+[3/07/2025 8:37 PM] Abhinav AI MACE: Don't forget
+[17/07/2025 3:47 PM] Abhinav AI MACE: LAB QUESTIONS FOR TOMOROW: 1. Implement Simple Linear Regression with Synthetic Data.      2.  Implement basic image enhancement operations such as histogram equalization, morphological operations.
+[17/07/2025 3:47 PM] Abhinav AI MACE: The program has to done in vs code using pytorch
+[27/07/2025 8:22 PM] Abhinav AI MACE: 🛑
+[27/07/2025 8:23 PM] Abhinav AI MACE: Naale lab is for batch 2
+------------------------------------

@@ -1,0 +1,5 @@
+git clone 
+
+git add .
+git commit -m "Added Algorithms"
+git push origin main

@@ -1,0 +1,10 @@
+8-line step-by-step algorithm for your PyTorch linear regression program, suitable for a lab manual:
+
+1.  **Generate Data:** Create synthetic input `X` and target `y` tensors representing a linear relationship with noise.
+2.  **Define Model Architecture:** Design a `torch.nn.Module` class with a single `nn.Linear` layer for the regression.
+3.  **Instantiate Model, Loss, Optimizer:** Create an instance of the model, define `nn.MSELoss()` as the loss function, and `torch.optim.SGD` as the optimizer.
+4.  **Initialize Training Loop:** Set the number of `epochs` for training the model.
+5.  **Forward Pass:** Inside the loop, pass the input `X` through the model to get `outputs` (predictions).
+6.  **Calculate Loss:** Compute the `MSELoss` between the model's `outputs` and the true `y` values.
+7.  **Backward Pass & Optimize:** Zero the gradients, perform backpropagation (`loss.backward()`), and update model parameters (`optimizer.step()`).
+8.  **Visualize Results:** After training, plot the original data points and the `predicted` regression line to show the model's fit.
