@@ -35,6 +35,6 @@ This lab course provides hands-on experience with fundamental and advanced conce
 
 ---
 
-[📄 **Download Full Syllabus (PDF)**](Text/DLL-Syllabus.pdf)
+[📄 **View Full Syllabus (PDF)**](Text/DLL-Syllabus.pdf)
 
 > _For detailed experiment instructions, refer to your lab manual or course instructor._
