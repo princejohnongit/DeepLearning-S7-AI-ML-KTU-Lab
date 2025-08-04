@@ -2,7 +2,7 @@ git clone https://github.com/dbmslab2024/DeepLearning-S7-AI-ML-KTU-Lab.git
 --------------------------------------------------------------------------
 git pull https://github.com/dbmslab2024/DeepLearning-S7-AI-ML-KTU-Lab.git
 git add .
-git commit -m "Added exp 4 and exp 5"
+git commit -m "Added print"
 git push origin main
 
 
