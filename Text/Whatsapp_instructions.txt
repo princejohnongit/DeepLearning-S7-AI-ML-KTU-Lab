@@ -16,3 +16,69 @@
 [27/07/2025 8:22 PM] Abhinav AI MACE: 🛑
 [27/07/2025 8:23 PM] Abhinav AI MACE: Naale lab is for batch 2
 ------------------------------------
+[3/08/2025 5:41 PM] Abhinav AI MACE: Implement Feed forward neural network with three hidden layers for classification on CIFAR-10 dataset. Design and train a neural network that achieves high accuracy in classifying the images into their respective classes. Test for different hyper-parameters-  Run 1:
+Hidden units: (512, 256, 128)
+Activation: relu
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+Run 2:
+Hidden units: (512, 256, 128)
+Activation: tanh
+
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+Run 3:
+Hidden units: (512, 256, 128)
+Activation: sigmoid
+
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+Run 4:
+Hidden units: (256, 128, 64)
+Activation: relu
+
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+Run 5:
+Hidden units: (256, 128, 64)
+Activation: tanh
+
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+Run 6:
+Hidden units: (256, 128, 64)
+Activation: sigmoid
+
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+Run 7:
+Hidden units: (1024, 512, 256)
+Activation: relu
+
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+Run 8:
+Hidden units: (1024, 512, 256)
+Activation: tanh
+
+- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+Run 9:
+Hidden units: (1024, 512, 256)
+Activation: sigmoid
+[3/08/2025 5:42 PM] Abhinav AI MACE: Implement a feed forward neural network with three hidden 
+                layers for the CIFAR-10 dataset. Train the network using a baseline optimization 
+                algorithm, such as Adam, without any specific weight initialization 
+                technique or regularization technique. Record the accuracy and loss
+                 during training. (a) Repeat the training process with Xavier initialization 
+                 for weight initialization. Compare the convergence speed and accuracy of the 
+                 network with the baseline results. Analyze the impact of Xavier initialization 
+                 on the network's performance. (b) Repeat the training process with Kaiming
+                  initialization for weight initialization. Compare the convergence speed and
+                   accuracy of the network with the baseline results. Analyze the impact of
+                    Kaiming initialization on the network's performance. (c) Implement dropout 
+                    regularization by applying dropout to the hidden layers of the network. 
+                    Train the network with dropout regularization and compare its performance 
+                    with the baseline results. Analyze the impact of dropout on the network's 
+                    performance in terms of accuracy and overfitting (d) Implement L2 
+                    regularization techniques by adding a regularization term to the loss
+                     function during training. Train the network with regularization and 
+                     compare its performance with the baseline results. Analyze the impact
+                      of regularization on the network's performance in terms of accuracy and
+                       prevention of overfitting.
+[3/08/2025 5:42 PM] Abhinav AI MACE: Deep Learning lab program questions for tomorrow.
+[3/08/2025 5:45 PM] Abhinav AI MACE: Everyone in tomorrow's batch, should submit their 
+                    rough records completed up to the third experiment 
+                    along with the given program algorithm in tomorrow's lab hour.
