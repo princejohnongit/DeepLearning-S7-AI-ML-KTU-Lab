@@ -1,0 +1,12 @@
+**Algorithm: Feedforward Neural Network for CIFAR-10 Image Classification**
+
+1. Import the necessary libraries for deep learning (PyTorch), data handling, and image processing.
+2. Download and preprocess the CIFAR-10 dataset, normalizing the images and creating training and test data loaders.
+3. Define a feedforward neural network model class with three hidden layers, customizable hidden units, and activation functions (ReLU, Tanh, or Sigmoid).
+4. Initialize the neural network model with specified hidden units and activation function.
+5. Specify the loss function as CrossEntropyLoss and select the Adam optimizer for training.
+6. For each epoch, set the model to training mode and iterate over all training batches.
+7. In each batch, flatten input images, pass them through the neural network, compute the loss, and update the model weights using backpropagation.
+8. After training, set the model to evaluation mode and test its performance on the test dataset.
+9. Calculate the total number of correctly classified test images and compute the overall test accuracy.
+10. Repeat the above steps for different combinations of hidden units and activation functions, and compare the resulting test accuracies.
