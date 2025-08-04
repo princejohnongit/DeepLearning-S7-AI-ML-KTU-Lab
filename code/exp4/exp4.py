@@ -4,13 +4,15 @@ import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
+from PIL import Image
+import os
 
 # Set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Hyperparameters
 BATCH_SIZE = 128
-EPOCHS = 10
+EPOCHS = 5
 LEARNING_RATE = 1e-3
 
 # Data transforms
@@ -72,6 +74,7 @@ def train_and_test(hidden_units, activation, run_id):
             total_loss += loss.item()
         print(f"Epoch {epoch+1}/{EPOCHS} - Loss: {total_loss / len(trainloader):.4f}")
 
+
     # Test
     model.eval()
     correct, total = 0, 0
@@ -85,6 +88,19 @@ def train_and_test(hidden_units, activation, run_id):
     acc = 100 * correct / total
     print(f"Test Accuracy: {acc:.2f}%")
     return acc
+
+def predict_image(model, image_path, transform, device):
+    model.eval()
+    img = Image.open(image_path).convert('RGB')
+    img_tensor = transform(img).unsqueeze(0).to(device)
+    with torch.no_grad():
+        output = model(img_tensor)
+        _, predicted = torch.max(output, 1)
+    class_names = [
+        'airplane', 'automobile', 'bird', 'cat', 'deer',
+        'dog', 'frog', 'horse', 'ship', 'truck'
+    ]
+    return class_names[predicted.item()]
 
 if __name__ == "__main__":
     runs = [
@@ -100,10 +116,33 @@ if __name__ == "__main__":
         ((1024, 512, 256), "sigmoid"),
     ]
     results = []
-    for i, (hidden_units, activation) in enumerate(runs, 1):
-        acc = train_and_test(hidden_units, activation, i)
-        results.append((i, hidden_units, activation, acc))
+    best_model = None
+    best_acc = 0
+    best_params = None
+    # Only train if model weights do not exist
+    if not os.path.exists('best_model.pth'):
+        for i, (hidden_units, activation) in enumerate(runs, 1):
+            acc = train_and_test(hidden_units, activation, i)
+            results.append((i, hidden_units, activation, acc))
+            if acc > best_acc:
+                best_acc = acc
+                best_params = (hidden_units, activation)
+                # Save the best model
+                model = FeedforwardNN(hidden_units, activation).to(device)
+                torch.save(model.state_dict(), 'best_model.pth')
+        print("\n--- Summary ---")
+        for run_id, hidden_units, activation, acc in results:
+            print(f"Run {run_id}: Hidden units={hidden_units}, Activation={activation}, Test Acc={acc:.2f}%")
+    else:
+        print("Found existing trained model. Skipping training.")
+        best_params = (512, 256, 128), "relu"  # Set to your best config
 
-    print("\n--- Summary ---")
-    for run_id, hidden_units, activation, acc in results:
-        print(f"Run {run_id}: Hidden units={hidden_units}, Activation={activation}, Test Acc={acc:.2f}%")
+    # Load the best model for prediction
+    model = FeedforwardNN(*best_params).to(device)
+    model.load_state_dict(torch.load('best_model.pth'))
+    model.eval()
+
+    # After training, ask for an image and predict its class
+    image_path = "DeepLearning-S7-AI-ML-KTU-Lab/code/exp4/cat.jpeg"
+    predicted_class = predict_image(model, image_path, transform, device)
+    print(f"Predicted class: {predicted_class}")
