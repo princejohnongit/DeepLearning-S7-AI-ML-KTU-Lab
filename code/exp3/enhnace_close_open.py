@@ -1,3 +1,14 @@
+def to_grayscale(img_tensor):
+    img = img_tensor.squeeze().cpu().numpy()
+    if img.ndim == 3 and img.shape[0] == 3:
+        # Convert from CHW to HWC
+        img = np.transpose(img, (1, 2, 0))
+        img_gray = np.dot(img[..., :3], [0.2989, 0.5870, 0.1140])
+        return img_gray
+    return img
+
+def binarise(img_np, threshold=0.5):
+    return (img_np > threshold).astype(float)
 import torch
 import numpy as np
 from PIL import Image
@@ -75,23 +86,35 @@ def show_image(img_tensor, title='Image'):
 if __name__ == "__main__":
     # Example usage
     img_path = '/home/cs-ai-21/Prince/DeepLearning-S7-AI-ML-KTU-Lab/code/exp3/input.jpg'
-    img_tensor = load_image(img_path, grayscale=True)
+    img_tensor = load_image(img_path, grayscale=False)  # Load as color
 
-    # Histogram Equalization
-    img_he = histogram_equalization(img_tensor)
-    img_open = morphological_operation(img_tensor, operation='open', kernel_size=5)
-    img_close = morphological_operation(img_tensor, operation='close', kernel_size=5)
+    # Prepare all images
+    img_col = img_tensor.squeeze().cpu().numpy()
+    if img_col.ndim == 3 and img_col.shape[0] == 3:
+        img_col_disp = np.transpose(img_col, (1, 2, 0))
+    else:
+        img_col_disp = img_col
 
-    # Display all four images together
-    images = [img_tensor, img_he, img_open, img_close]
-    titles = ['Original', 'Histogram Equalized', 'Opened', 'Closed']
-    plt.figure(figsize=(12, 6))
+    img_gray = to_grayscale(img_tensor)
+    img_he = histogram_equalization(torch.from_numpy(img_gray).unsqueeze(0))
+    img_he_np = img_he.squeeze().cpu().numpy()
+    img_bin = binarise(img_gray)
+    img_open = morphological_operation(torch.from_numpy(img_bin).unsqueeze(0), operation='open', kernel_size=5)
+    img_close = morphological_operation(torch.from_numpy(img_bin).unsqueeze(0), operation='close', kernel_size=5)
+
+    images = [
+        img_col_disp,
+        img_gray,
+        img_he_np,
+        img_bin,
+        img_open.squeeze().cpu().numpy(),
+        img_close.squeeze().cpu().numpy()
+    ]
+    titles = ['Original (Color)', 'Grayscale', 'Histogram Equalized', 'Binarised', 'Opened', 'Closed']
+    plt.figure(figsize=(18, 3))
     for i, (img, title) in enumerate(zip(images, titles)):
-        plt.subplot(1, 4, i+1)
-        arr = img.squeeze().cpu().numpy()
-        if arr.ndim == 3 and arr.shape[0] == 3:
-            arr = np.transpose(arr, (1, 2, 0))
-        plt.imshow(arr, cmap='gray' if arr.ndim == 2 else None)
+        plt.subplot(1, 6, i+1)
+        plt.imshow(img, cmap='gray' if img.ndim == 2 else None)
         plt.title(title)
         plt.axis('off')
     plt.tight_layout()
