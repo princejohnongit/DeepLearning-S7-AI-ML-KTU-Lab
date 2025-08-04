@@ -10,7 +10,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Hyperparameters
 BATCH_SIZE = 128
-EPOCHS = 20
+EPOCHS = 10
 LEARNING_RATE = 1e-3
 
 # Data transforms
