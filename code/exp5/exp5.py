@@ -90,7 +90,7 @@ def train_model(model, train_loader, test_loader, epochs, lr, l2=0.0):
         stats['train_acc'].append(train_acc)
         stats['test_loss'].append(test_loss)
         stats['test_acc'].append(test_acc)
-        print(f"Epoch {epoch+1}/{epochs}:", 
+        print(f"Epoch {epoch+1}/{epochs}:",
               f"Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.4f},",
               f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.4f}")
     return stats
@@ -173,3 +173,64 @@ def print_analysis(results):
     print("d) L2 Regularization: Test if accuracy is higher and overfitting is reduced. L2 can help prevent weights from growing and force the model to generalize better.")
 
 print_analysis(results)
+
+# 10. Best Model Performance
+def find_best_model(results):
+    print("\n" + "="*60)
+    print("BEST MODEL PERFORMANCE ANALYSIS")
+    print("="*60)
+
+    # Find best model based on final test accuracy
+    best_accuracy = 0
+    best_model = ""
+    best_stats = None
+
+    print("\nFinal Performance Comparison:")
+    print("-" * 50)
+    for key, stats in results.items():
+        final_acc = stats['test_acc'][-1]
+        final_loss = stats['test_loss'][-1]
+        print(f"{key:<20}: Test Acc = {final_acc:.4f}, Test Loss = {final_loss:.4f}")
+
+        if final_acc > best_accuracy:
+            best_accuracy = final_acc
+            best_model = key
+            best_stats = stats
+
+    print("\n" + "="*50)
+    print(f"🏆 BEST PERFORMING MODEL: {best_model.upper()}")
+    print("="*50)
+    print(f"Final Test Accuracy: {best_accuracy:.4f} ({best_accuracy*100:.2f}%)")
+    print(f"Final Test Loss: {best_stats['test_loss'][-1]:.4f}")
+    print(f"Final Train Accuracy: {best_stats['train_acc'][-1]:.4f} ({best_stats['train_acc'][-1]*100:.2f}%)")
+    print(f"Final Train Loss: {best_stats['train_loss'][-1]:.4f}")
+
+    # Calculate overfitting metric (difference between train and test accuracy)
+    overfitting = best_stats['train_acc'][-1] - best_stats['test_acc'][-1]
+    print(f"Overfitting Gap: {overfitting:.4f} ({overfitting*100:.2f}%)")
+
+    # Find best epoch performance
+    best_epoch_acc = max(best_stats['test_acc'])
+    best_epoch_idx = best_stats['test_acc'].index(best_epoch_acc)
+    print(f"Best Test Accuracy: {best_epoch_acc:.4f} at Epoch {best_epoch_idx + 1}")
+
+    print("\n" + "="*50)
+    print("PERFORMANCE INSIGHTS:")
+    print("="*50)
+
+    if overfitting > 0.05:  # 5% gap
+        print("⚠️  High overfitting detected - consider more regularization")
+    elif overfitting < 0.02:  # 2% gap
+        print("✅ Good generalization - low overfitting")
+    else:
+        print("✅ Moderate overfitting - acceptable performance")
+
+    # Compare with baseline
+    if best_model != 'baseline':
+        baseline_acc = results['baseline']['test_acc'][-1]
+        improvement = (best_accuracy - baseline_acc) * 100
+        print(f"📈 Improvement over baseline: +{improvement:.2f}%")
+
+    return best_model, best_stats
+
+find_best_model(results)
