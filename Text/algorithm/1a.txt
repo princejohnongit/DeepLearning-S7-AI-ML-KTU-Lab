@@ -1,12 +1,14 @@
-10-line step-by-step algorithm for your ID3 decision tree program, suitable for a lab manual:
+12-step algorithm for ID3 decision tree program with visualization, suitable for a lab manual:
 
-1.  **Initialize Data:** Define the training dataset (e.g., 'PlayTennis' data) with features and a target variable.
-2.  **Define `entropy` Function:** Implement `entropy(target_col)` to measure data impurity.
-3.  **Define `info_gain` Function:** Implement `info_gain(data, attribute, target)` to calculate information gain for an attribute.
-4.  **Define `ID3` Function:** Create `ID3(data, original_data, features, target)` for recursive tree building.
-5.  **`ID3` Logic:** In `ID3`, select the best feature (highest info gain), create a node, and recurse for each feature value.
-6.  **`ID3` Base Cases:** Handle uniform target values, empty datasets, or no remaining features.
-7.  **Define `predict` Function:** Implement `predict(query, tree)` to traverse the tree for classification.
-8.  **Build Tree:** Call `ID3` with the initial data, features, and target to construct the decision tree.
-9.  **Get User Input:** Prompt the user for values for a new sample's features.
-10. **Predict & Display:** Use `predict` to classify the user's sample and print the result.
+1.  **Import Libraries:** Import math, pandas, and matplotlib.pyplot for calculations and visualization.
+2.  **Define `entropy` Function:** Implement `entropy(target_col)` using pandas value_counts() and math.log2() to measure data impurity.
+3.  **Define `info_gain` Function:** Implement `info_gain(data, split_attribute_name, target_name)` to calculate information gain for splitting attributes.
+4.  **Define `ID3` Function:** Create recursive `ID3(data, original_data, features, target_attribute_name, parent_node_class)` for tree building.
+5.  **`ID3` Base Cases:** Handle three termination conditions: uniform target values, empty datasets, or exhausted features.
+6.  **`ID3` Best Feature Selection:** Calculate information gain for all features and select the one with maximum gain as the splitting attribute.
+7.  **`ID3` Tree Construction:** Create tree dictionary structure and recursively build subtrees for each feature value.
+8.  **Define `predict` Function:** Implement `predict(query, tree, default)` to traverse the tree dictionary for classification with error handling.
+9.  **Define `plot_tree_with_matplotlib` Function:** Create visualization function to draw decision tree using matplotlib with nodes, edges, and labels.
+10. **Initialize PlayTennis Dataset:** Create pandas DataFrame with 14 samples containing Outlook, Temperature, Humidity, Wind, and PlayTennis columns.
+11. **Build & Display Tree:** Call ID3 algorithm to construct decision tree, print tree structure, and create sample prediction with predefined values.
+12. **Visualize Tree:** Use matplotlib plotting function to display the decision tree graphically with colored nodes and labeled branches.

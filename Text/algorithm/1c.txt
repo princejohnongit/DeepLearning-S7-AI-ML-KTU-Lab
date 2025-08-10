@@ -1,9 +1,9 @@
 7-line step-by-step algorithm for your Linear Regression with Gradient Descent program, suitable for a lab manual:
 
-1.  **Generate Data:** Create synthetic linear data points `X` and `y` with added random noise.
-2.  **Initialize Parameters:** Set initial values for the slope (`m`), intercept (`c`), learning rate (`alpha`), and number of `epochs`.
-3.  **Gradient Descent Loop:** Iterate for the specified `epochs` to optimize parameters.
-4.  **Calculate Prediction & Error:** Inside the loop, compute `y_pred` and the `error` (`y_pred - y`).
-5.  **Compute Cost & Gradients:** Calculate the Mean Squared Error (`cost`) and the gradients (`dm`, `dc`).
-6.  **Update Parameters:** Adjust `m` and `c` using the learning rate and calculated gradients.
-7.  **Visualize Results:** Plot the final fitted regression line on the data and the cost function's reduction over epochs.
+1.  **Generate Data:** Create synthetic linear data points `X` and `y` using random seed with Gaussian noise added.
+2.  **Initialize Parameters:** Set initial values for the slope (`m=0`), intercept (`c=0`), learning rate (`alpha=0.1`), and `epochs=25`.
+3.  **Gradient Descent Loop:** Iterate for the specified `epochs` to optimize parameters using cost history tracking.
+4.  **Calculate Prediction & Error:** Inside the loop, compute `y_pred = m*X + c` and the `error = y_pred - y`.
+5.  **Compute Cost & Gradients:** Calculate the Mean Squared Error (`cost`) and the gradients (`dm`, `dc`) using derivatives.
+6.  **Update Parameters:** Adjust `m -= alpha*dm` and `c -= alpha*dc` using calculated gradients each iteration.
+7.  **Visualize Results:** Plot the final fitted regression line on data and cost function reduction over epochs side-by-side.

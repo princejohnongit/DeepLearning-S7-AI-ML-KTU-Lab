@@ -1,12 +1,12 @@
 10-line step-by-step algorithm for your SVM classification program, suitable for a lab manual:
 
-1.  **Load Dataset:** Import and load the Iris dataset (or your chosen dataset).
-2.  **Split Data:** Divide the dataset into training (80%) and testing (20%) sets.
-3.  **Feature Scale:** Apply `StandardScaler` to normalize features for optimal SVM performance.
-4.  **Initialize SVM:** Create an `SVC` classifier instance, specifying a `linear` kernel.
-5.  **Train Model:** Fit the SVM model using the scaled training data and labels.
-6.  **Make Predictions:** Use the trained model to predict labels for the scaled test data.
-7.  **Calculate Accuracy:** Compute the `accuracy_score` by comparing predicted and true labels.
-8.  **Generate Confusion Matrix:** Create the `confusion_matrix` to assess classification performance.
-9.  **Generate Classification Report:** Print the `classification_report` for precision, recall, and F1-score.
-10. **Visualize Results:** Display the confusion matrix using `seaborn.heatmap` for visual analysis.
+1.  **Load Dataset:** Import and load the Iris dataset using sklearn.datasets with features and target labels.
+2.  **Split Data:** Divide the dataset into training (80%) and testing (20%) sets using train_test_split.
+3.  **Feature Scale:** Apply `StandardScaler` to normalize features for optimal SVM performance on both sets.
+4.  **Initialize SVM:** Create an `SVC` classifier instance, specifying `linear` kernel and C=1.0 parameter.
+5.  **Train Model:** Fit the SVM model using the scaled training data and corresponding target labels.
+6.  **Make Predictions:** Use the trained model to predict class labels for the scaled test feature data.
+7.  **Calculate Metrics:** Compute accuracy_score, confusion_matrix, and classification_report for evaluation.
+8.  **Prepare 2D Data:** Extract first two features, split, scale, and train separate SVM for visualization.
+9.  **Create Mesh Grid:** Generate coordinate mesh using numpy.meshgrid for decision boundary plotting region.
+10. **Visualize Results:** Display confusion matrix heatmap and SVM decision boundary with data points.

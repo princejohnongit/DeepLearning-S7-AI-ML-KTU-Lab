@@ -1,14 +1,14 @@
 12-line step-by-step algorithm for your image processing program, suitable for a lab manual (matching the current code):
 
-1.  **Import Libraries:** Import `torch`, `numpy`, `PIL.Image`, `torchvision.transforms.functional`, and `matplotlib.pyplot`.
-2.  **Define `load_image`:** Implement a function to load an image from a path, convert it to grayscale or RGB, and transform it into a PyTorch tensor.
-3.  **Define `show_image`:** Implement a helper function to display a PyTorch image tensor using Matplotlib.
-4.  **Define `_equalize_channel`:** Create a helper to perform histogram equalization on a single channel (compute histogram, CDF, normalize, interpolate).
-5.  **Define `histogram_equalization`:** Implement a function that applies `_equalize_channel` to grayscale images or each channel of an RGB image.
-6.  **Define `_dilate`:** Create a helper for morphological dilation, applying a max filter with a kernel.
-7.  **Define `_erode`:** Create a helper for morphological erosion, applying a min filter with a kernel.
-8.  **Define `morphological_operation`:** Implement a function to select and apply either 'open' (erosion followed by dilation) or 'close' (dilation followed by erosion) based on input.
-9.  **Load Input Image:** Load a sample image (e.g., 'input.jpg') as a grayscale PyTorch tensor.
-10. **Perform Histogram Equalization:** Apply the `histogram_equalization` function to the loaded image and display both original and equalized images.
-11. **Perform Opening:** Apply the `morphological_operation` with 'open' to the original image and display the result.
-12. **Perform Closing:** Apply the `morphological_operation` with 'close' to the original image and display the result.
+1.  **Import Libraries:** Import `torch`, `numpy`, `PIL.Image`, `torchvision.transforms.functional`, and `matplotlib.pyplot` for image processing.
+2.  **Define `load_image`:** Implement function to load image from path, convert to grayscale/RGB, transform to PyTorch tensor with batch dimension.
+3.  **Define `to_grayscale`:** Create function to convert RGB tensor to grayscale using weighted sum [0.2989, 0.5870, 0.1140] for color channels.
+4.  **Define `binarise`:** Implement function to convert grayscale image to binary using threshold (default 0.5) for morphological operations.
+5.  **Define `histogram_equalization`:** Implement function using `_equalize_channel` helper to enhance contrast via CDF normalization and interpolation.
+6.  **Define `_dilate` & `_erode`:** Create morphological helpers using kernel operations - max filter for dilation, min filter for erosion.
+7.  **Define `morphological_operation`:** Implement function for opening (erode→dilate) and closing (dilate→erode) with configurable kernel size.
+8.  **Define `show_image`:** Create display helper to show PyTorch tensors using matplotlib with proper axis handling and grayscale mapping.
+9.  **Load & Convert Image:** Load input image as color tensor, then create grayscale and histogram-equalized versions for processing pipeline.
+10. **Apply Binarization:** Convert grayscale image to binary format using threshold to prepare for morphological operations analysis.
+11. **Perform Opening & Closing:** Apply both morphological operations with kernel size 5 to binary image for noise removal comparison.
+12. **Display Results:** Show all six images (original, grayscale, histogram-equalized, binary, opened, closed) in single matplotlib figure layout.
