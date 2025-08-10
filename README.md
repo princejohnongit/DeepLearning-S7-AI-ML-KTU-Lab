@@ -1,5 +1,5 @@
 <div align="center">
-title: "Hi THere"
+
 # 🧠 Deep Learning Lab (DLL) - S7 AI & ML (KTU)
 
 **Course Code:** AIL 411
