@@ -1,5 +1,3 @@
-12-step algorithm for ID3 decision tree program with visualization, suitable for a lab manual:
-
 1.  **Import Libraries:** Import math, pandas, and matplotlib.pyplot for calculations and visualization.
 2.  **Define `entropy` Function:** Implement `entropy(target_col)` using pandas value_counts() and math.log2() to measure data impurity.
 3.  **Define `info_gain` Function:** Implement `info_gain(data, split_attribute_name, target_name)` to calculate information gain for splitting attributes.
