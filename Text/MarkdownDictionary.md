@@ -19,7 +19,7 @@ This is the start of the document content.
 
 [toc]
 # Introduction
-# Solution {#custom-solution}
+# Solution {#custom-id}
 
 ivde thoodakkam varanam
 # The Problem
@@ -128,7 +128,7 @@ A paragraph with a custom class. { .my-custom-class }
 
 # A heading with an ID
 
-# Heading Text {#custom-id}
+# Heading Text #custom-id
 ## Another Heading {#another-id}
 ### Sub Heading {#sub-heading-id}
 
@@ -145,3 +145,4 @@ A paragraph with a custom class. { .my-custom-class }
 [^1]: This is the first footnote.
     
 [^2]: This is the second footnote.
+<h1 id="custom_id">My Awesome Heading</h1>
