@@ -22,7 +22,7 @@ This is the start of the document content.
 # Solution {#custom-id}
 
 ivde thoodakkam varanam
-# The Problem {#awesome_heading}
+# My Awesome Heading {#awesome-heading}
 ivde preshnam varanam
 # A Solution
 ivde solution varanam
