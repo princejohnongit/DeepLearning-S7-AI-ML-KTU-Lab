@@ -29,6 +29,13 @@ ivde conclusion varanam
 
 ---
 
+| Left-Aligned Header | Center-Aligned Header | Right-Aligned Header |
+| :------------------ | :-------------------: | -------------------: |
+| Content 1           | Content 2             | Content 3            |
+| Content 4           | Content 5             | Content 6            |
+
+---
+
 This is a ~~mistaken~~ word.
 
 ---
