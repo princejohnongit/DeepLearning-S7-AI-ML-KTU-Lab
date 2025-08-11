@@ -119,26 +119,11 @@ function greet(name) {
   console.log(`Hello, ${name}!`);
 }
 ```
-
----
-
----
-
-A paragraph with a custom class. { .my-custom-class }
-
-# A heading with an ID
-
-# Heading Text #custom-id
-## Another Heading {#another-id}
-### Sub Heading {#sub-heading-id}
-
 ---
 
 [Go to Introduction](#introduction)
 
 ---
-
-
 
 [1]: https://www.google.com
 [2]: https://www.wikipedia.org
