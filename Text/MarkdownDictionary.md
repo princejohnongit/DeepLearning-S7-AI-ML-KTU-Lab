@@ -133,7 +133,7 @@ A paragraph with a custom class. { .my-custom-class }
 ### Sub Heading {#sub-heading-id}
 
 ---
-
+[Go to the awesome heading](#awesome-heading)
 ---
 
 > [!QUOTE]
