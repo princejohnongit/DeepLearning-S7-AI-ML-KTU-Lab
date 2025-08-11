@@ -22,7 +22,7 @@ This is the start of the document content.
 # Solution {#custom-id}
 
 ivde thoodakkam varanam
-# My Awesome Heading {#awesome-heading}
+# My Awesome Heading
 ivde preshnam varanam
 # A Solution
 ivde solution varanam
@@ -146,4 +146,4 @@ A paragraph with a custom class. { .my-custom-class }
     
 [^2]: This is the second footnote.
 
-[Go to the awesome heading](#awesome-heading)
+[Go to the awesome heading](#my-awesome-heading)
