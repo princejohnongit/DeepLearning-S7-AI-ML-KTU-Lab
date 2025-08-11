@@ -19,6 +19,8 @@ This is the start of the document content.
 
 [toc]
 # Introduction
+# Solution {#custom-solution}
+
 ivde thoodakkam varanam
 # The Problem
 ivde preshnam varanam
@@ -125,6 +127,10 @@ function greet(name) {
 A paragraph with a custom class. { .my-custom-class }
 
 # A heading with an ID
+
+# Heading Text {#custom-id}
+## Another Heading {#another-id}
+### Sub Heading {#sub-heading-id}
 
 ---
 
