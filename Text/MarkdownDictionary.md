@@ -19,10 +19,8 @@ This is the start of the document content.
 
 [toc]
 # Introduction
-# Solution {#custom-id}
-
-ivde thoodakkam varanam
-# Introduction
+ivde thodakkam varanam
+# Problem
 ivde preshnam varanam
 # A Solution
 ivde solution varanam
@@ -90,7 +88,9 @@ graph TD
 > [!WARNING]
 > This is a warning. Warnings are for important information that could lead to issues.
 
-sg
+> [!QUOTE]
+> “The only way to do great work is to love what you do.”
+> — Steve Jobs
 
 ---
 
@@ -138,9 +138,7 @@ A paragraph with a custom class. { .my-custom-class }
 
 ---
 
-> [!QUOTE]
-> “The only way to do great work is to love what you do.”
-> — Steve Jobs
+
 
 [1]: https://www.google.com
 [2]: https://www.wikipedia.org
